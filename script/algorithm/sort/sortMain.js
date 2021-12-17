@@ -32,23 +32,21 @@ const getRunTime = async (fun) => {
     let end = 0;
     const res = await sortFun[fun](arr);
     end = new Date().getTime();
-    return {
-        res, time: end - start,
-    };
+    return { res: res.join(), time: end - start };
 };
 
 
 
 (async () => {
-    console.log('bubble', await getRunTime('bubble'));
+    console.log('bubble   ', await getRunTime('bubble'));
     console.log('selection', await getRunTime('selection'));
     console.log('insertion', await getRunTime('insertion'));
-    console.log('shell', await getRunTime('shell'));
-    console.log('merge', await getRunTime('merge'));
-    console.log('quick', await getRunTime('quick'));
-    console.log('quick2', await getRunTime('quick2'));
-    console.log('heap', await getRunTime('heap'));
-    console.log('counting', await getRunTime('counting'));
-    console.log('bucket', await getRunTime('bucket'));
-    console.log('radix', await getRunTime('radix'));
+    console.log('shell    ', await getRunTime('shell'));
+    console.log('merge    ', await getRunTime('merge'));
+    console.log('quick    ', await getRunTime('quick'));
+    console.log('quick2   ', await getRunTime('quick2'));
+    console.log('heap     ', await getRunTime('heap'));
+    console.log('counting ', await getRunTime('counting'));
+    console.log('bucket   ', await getRunTime('bucket'));
+    console.log('radix    ', await getRunTime('radix'));
 })();

@@ -12,13 +12,11 @@ const swap = (arr, i, j) => {
 };
 
 const heapify = (arr, i) => {     // 堆调整
-    const left = 2 * i + 1,
-        right = 2 * i + 2;
+    const left = 2 * i + 1;
+    const right = 2 * i + 2;
     let largest = i;
-
     if (left < len && arr[left] > arr[largest]) largest = left;
     if (right < len && arr[right] > arr[largest]) largest = right;
-
     if (largest !== i) {
         swap(arr, i, largest);
         heapify(arr, largest);
@@ -28,10 +26,7 @@ const heapify = (arr, i) => {     // 堆调整
 const heapSort = (arr) => {
     // 建立大顶堆
     len = arr.length;
-    for (let i = Math.floor(len / 2); i >= 0; i--) {
-        heapify(arr, i);
-    }
-
+    for (let i = Math.floor(len / 2); i >= 0; i--) heapify(arr, i);
     // 堆调整
     for (let i = arr.length - 1; i > 0; i--) {
         swap(arr, 0, i);

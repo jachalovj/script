@@ -16,10 +16,7 @@ const partition = (arr, left ,right) => {     // 分区操作
     let pivot = left,                      // 设定基准值（pivot）
         index = pivot + 1;
     for (let i = index; i <= right; i++) {
-        if (arr[i] < arr[pivot]) {
-            swap(arr, i, index);
-            index++;
-        }
+        if (arr[i] < arr[pivot]) swap(arr, i, index++);
     }
     swap(arr, pivot, index - 1);
     return index - 1;
@@ -42,13 +39,9 @@ const quickSort = (arr, left, right) => {
 const partition2 = (arr, low, high) => {
     let pivot = arr[low];
     while (low < high) {
-        while (low < high && arr[high] > pivot) {
-            --high;
-        }
+        while (low < high && arr[high] > pivot) --high;
         arr[low] = arr[high];
-        while (low < high && arr[low] <= pivot) {
-            ++low;
-        }
+        while (low < high && arr[low] <= pivot) ++low;
         arr[high] = arr[low];
     }
     arr[low] = pivot;

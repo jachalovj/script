@@ -11,10 +11,7 @@ const countingSort = (arr) => {
     }
     for (let i = 0; i < bucket.length; i++) {
         let val = bucket[i];
-        while (val) {
-            arr[sortedIndex++] = i;
-            val--;
-        }
+        while (val--) arr[sortedIndex++] = i;
     }
     return arr;
 };
