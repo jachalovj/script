@@ -1,3 +1,8 @@
+/**
+ * 大文件排序
+ * 一个超过内存限制的无序文件，每行是字符串
+ * 排序成一个有序的文件
+ */
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
@@ -162,7 +167,7 @@ const recursion = async (files = [], needRead = [], lines = [], writeLine = []) 
     let minStr = lines[0].str;
     let minid = lines[0].id;
     lines.forEach((l) => {
-        if (l.str <= minStr) {
+        if (l.str < minStr) {
             minStr = l.str;
             minid = l.id;
         }
