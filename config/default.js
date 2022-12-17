@@ -6,6 +6,8 @@ module.exports = {
 
     MONGODBS: {
         resource: 'mongodb://127.0.0.1:27017/cm-resource',
+        cgs: 'mongodb://127.0.0.1:27017/cgs',
+        scp_v2: 'mongodb://127.0.0.1:27017/scp_v2'
     },
     MYSQL: {
         account: {

@@ -1,30 +1,30 @@
-let ex1 = {
-    val: 1,
-    left: {
-        val: 2,
-        left: {
-            val: 3,
-            left: null,
-            right: null,
-        },
-        right: null,
-    },
-    right: {
-        val: 4,
-        left: null,
-        right: {
-            val: 5,
-            left: null,
-            right: null,
-        },
-    },
-};
-let ex2 = {
-    val: 1,
-    left: {
-        val: 2,
-    },
-};
+// let ex1 = {
+//     val: 1,
+//     left: {
+//         val: 2,
+//         left: {
+//             val: 3,
+//             left: null,
+//             right: null,
+//         },
+//         right: null,
+//     },
+//     right: {
+//         val: 4,
+//         left: null,
+//         right: {
+//             val: 5,
+//             left: null,
+//             right: null,
+//         },
+//     },
+// };
+// let ex2 = {
+//     val: 1,
+//     left: {
+//         val: 2,
+//     },
+// };
 
 
 // function maxLength( arr ) {
@@ -532,15 +532,15 @@ let ex2 = {
 // }
 // let res = IsContinuous([1,2,11,0,8]);
 
-function generateParenthesis( n ) {
-    // write code here
-    let res = [];
-    if (n <= 0) return res;
+// function generateParenthesis( n ) {
+//     // write code here
+//     let res = [];
+//     if (n <= 0) return res;
 
 
-    return res;
-}
-let res = generateParenthesis(3);
+//     return res;
+// }
+// let res = generateParenthesis(3);
 
-console.log(res);
+// console.log(res);
 
