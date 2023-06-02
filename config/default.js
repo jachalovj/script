@@ -7,7 +7,8 @@ module.exports = {
     MONGODBS: {
         resource: 'mongodb://127.0.0.1:27017/cm-resource',
         cgs: 'mongodb://127.0.0.1:27017/cgs',
-        scp_v2: 'mongodb://127.0.0.1:27017/scp_v2'
+        scp_v2: 'mongodb://127.0.0.1:27017/scp_v2',
+        log: 'mongodb://zhmd@banu-mongodb-primary-pub.mongodb.rds.aliyuncs.com:3717/wx,banu-mongodb-secondary-pub.mongodb.rds.aliyuncs.com:3717/wx?replicaSet=mgset-36799365&authSource=admin&'
     },
     MYSQL: {
         account: {
