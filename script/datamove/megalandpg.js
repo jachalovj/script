@@ -1,9 +1,9 @@
-const pg = require('pg')
-const { config } = require('./config')
+const pg = require("pg");
+const { config } = require("./config/config");
 
 const getDB = () => {
-  return new pg.Pool(config.postgres)
-}
+  return new pg.Pool(config.postgres);
+};
 
 const pgQuery = (sqlQuery, connection) => {
   return new Promise((resolve, reject) => {
@@ -12,7 +12,7 @@ const pgQuery = (sqlQuery, connection) => {
       return resolve(rows.rows || []);
     });
   });
-}
+};
 
 const select = async (sqlSelect) => {
   const db = getDB();
@@ -27,9 +27,29 @@ const select = async (sqlSelect) => {
       return resolve(result);
     });
   });
-}
+};
 
-module.exports = async () => {
-  const result = await select('SELECT code, useful_credit FROM "public"."crm_customer_info" where useful_credit > 0')
-  return result
-}
+const getCustomer = () => {
+  return select(
+    'SELECT code, useful_credit FROM "public"."crm_customer_info" WHERE useful_credit > 0'
+  );
+};
+
+const getCustomerByStore = () => {
+  return select(
+    `SELECT id, code, name, useful_credit, store_id, birthday, mobil, sex, remark, applets_openid FROM "public"."crm_customer_info" WHERE store_id IN ('3', '13', '14')`
+  );
+};
+
+const getWXMember = (openids) => {
+  const openidFilter = `'${openids.join("','")}'`;
+  return select(
+    `SELECT openid, nickname, head_img_url, unionid FROM "public"."wx_member" WHERE openid IN (${openidFilter})`
+  );
+};
+
+module.exports = {
+  getCustomer,
+  getCustomerByStore,
+  getWXMember,
+};

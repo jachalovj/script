@@ -14,7 +14,8 @@ mongodb: {
 
 postgres: {
   user: "postgres",
-  database: "megalanddb",
+  // database: "megalanddb",
+  database: "superddb",
   password: "Bn87551166",
   host: "120.26.75.160",
   port: 5432, // 扩展属性

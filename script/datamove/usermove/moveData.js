@@ -1,6 +1,6 @@
-const megalandmongo = require('./megalandmongo')
-const megalandMysql = require('./megalandMysql')
-const megalandpg = require('./megalandpg')
+const megalandmongo = require('../megalandmongo')
+const megalandMysql = require('../megalandMysql')
+const megalandpg = require('../megalandpg')
 const _ = require('lodash')
 
 const memberMap = {}
@@ -122,7 +122,7 @@ const insertMember = (members) => {
 
 const execute = async () => {
   const users = await getUsers()
-  const points = await megalandpg()
+  const points = await megalandpg.getCustomer()
   return Promise.all(_.chunk(users, 200).map(async (usersChunk) => {
     const wechatBinds = []
     const members = []
